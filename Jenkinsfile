@@ -70,6 +70,15 @@ pipeline {
          }
       }
 
+      stage('Run Trivy') {
+         steps {
+            sleep(time: 30, unit: 'SECONDS')
+            bat '''
+             C:\\Windows\\System32\\wsl.exe -- sudo trivy image waer/jenkins-course  
+             '''
+         }
+      }
+
 
    }
 }
