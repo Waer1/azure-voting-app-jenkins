@@ -1,5 +1,10 @@
 pipeline {
    agent any
+
+   trigger {
+
+   }
+
    stages{
       stage('Verify Branch') {
          steps {
@@ -8,14 +13,13 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            pwsh(script: 'docker images -a')
-            pwsh(script: """
+            bat"docker images -a"
+          bat "
                cd azure-vote/
                docker images -a
                docker build -t jenkins-pipeline .
                docker images -a
-               cd ..
-            """)
+               cd .."
          }
       }
    }
