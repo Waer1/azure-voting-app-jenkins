@@ -22,12 +22,15 @@ pipeline {
       stage('Start test app') {
          steps {
             echo "$STAGE_NAME"
-            echo "change"
             
             bat '''
                docker-compose up -d
             '''
-            sh './scripts/test_container.ps1'
+
+            pwsh(script: """
+               docker-compose down
+            """)
+
          }
 
 
