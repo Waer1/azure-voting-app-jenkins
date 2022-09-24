@@ -3,7 +3,7 @@ pipeline {
    stages{
       stage("Verify Branch"){
          steps{
-            bat "echo Branch Name: $BRANCH_NAME"
+            bat "echo Branch Name: ${BRANCH_NAME}"
          }
       }
    }
