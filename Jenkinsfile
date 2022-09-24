@@ -24,9 +24,10 @@ pipeline {
             echo "$STAGE_NAME"
             bat '''
                docker-compose up -d
-               powershell ./scripts/test_container.ps1
             '''
+            powershell './scripts/test_container.ps1'
          }
+
 
          post {
             success {
