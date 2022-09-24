@@ -1,9 +1,9 @@
 pipeline {
    agent any
    stages{
-      stage("Verify Branch"){
-         steps{
-            bat "echo Branch Name: ${env.BRANCH_NAME}"
+      stage('Verify Branch') {
+         steps {
+            echo "$GIT_BRANCH"
          }
       }
    }
