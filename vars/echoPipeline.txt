@@ -1,0 +1,1 @@
+Takes a message in the `message` parameter and prints it.
