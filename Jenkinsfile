@@ -22,6 +22,7 @@ pipeline {
       stage('Start test app') {
          steps {
             echo "$STAGE_NAME"
+            echo "change"
             
             bat '''
                docker-compose up -d
