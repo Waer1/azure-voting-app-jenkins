@@ -25,6 +25,7 @@ pipeline {
             
             bat '''
                docker-compose up -d
+               Set-ExecutionPolicy Unrestricted
                PowerShell ./scripts/test_container.ps1
             '''
          }
