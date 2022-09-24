@@ -42,7 +42,6 @@ pipeline {
       stage('Run Tests') {
          steps {
             bat '''
-               python --version
                pytest ./tests/test_sample.py
             '''
          }
@@ -55,6 +54,21 @@ pipeline {
             '''
          }
       }
+
+      stage("Push Container"){
+         steps{
+            echo "Workspace is : $WORKSPACE"
+            dir("$WORKSPACE/azure-vote"){
+               script{
+                  docker.withRegistry("https //index.docker.io/v1/ ","dockerHub"){
+                     def image = docker.build("blackdentech/jenkins-course:latest")
+                     image.Push()
+                  }
+               }
+            }
+         }
+      }
+
 
    }
 }
