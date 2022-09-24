@@ -1,10 +1,6 @@
 pipeline {
    agent any
 
-   trigger {
-
-   }
-
    stages{
       stage('Verify Branch') {
          steps {
