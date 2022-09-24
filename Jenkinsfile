@@ -25,9 +25,7 @@ pipeline {
             
             bat '''
                docker-compose up -d
-               cd scripts/ 
-               ./test_container.ps1
-               cd ..
+               PowerShell ./scripts/test_container.ps1
             '''
          }
 
