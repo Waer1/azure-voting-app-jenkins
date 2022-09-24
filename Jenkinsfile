@@ -26,9 +26,7 @@ pipeline {
             bat '''
                docker-compose up -d
             '''
-            sh '
-            ./scripts/test_container.ps1
-            '
+            sh './scripts/test_container.ps1'
          }
 
 
