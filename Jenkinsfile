@@ -29,7 +29,6 @@ pipeline {
             '''
          }
 
-
          post {
             success {
                echo "App started successfully :)"
@@ -43,6 +42,7 @@ pipeline {
       stage('Run Tests') {
          steps {
             bat '''
+               python -m pytest
                pytest ./tests/test_sample.py
             '''
          }
