@@ -42,7 +42,7 @@ pipeline {
       stage('Run Tests') {
          steps {
             bat '''
-               python -m pytest
+               python --version
                pytest ./tests/test_sample.py
             '''
          }
