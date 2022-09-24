@@ -22,10 +22,11 @@ pipeline {
       stage('Start test app') {
          steps {
             echo "$STAGE_NAME"
+            
             bat '''
                docker-compose up -d
             '''
-            powershell script """
+            powershell script: """
             ./scripts/test_container.ps1
             """
          }
