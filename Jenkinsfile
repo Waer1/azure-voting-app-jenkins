@@ -72,12 +72,9 @@ pipeline {
 
       stage('Run Trivy') {
          steps {
-            bat '''
-            wsl
-            cd
-            trivy image waer/jenkins-course  
-            exit
-             '''
+            pwsh(script: """
+            C:\\Windows\\System32\\wsl.exe -- ls
+            """)
          }
       }
 
