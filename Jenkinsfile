@@ -73,7 +73,10 @@ pipeline {
       stage('Run Trivy') {
          steps {
             bat '''
-             C:\\Windows\\System32\\wsl.exe -- sudo trivy image waer/jenkins-course  
+            wsl
+            cd
+            trivy image waer/jenkins-course  
+            exit
              '''
          }
       }
