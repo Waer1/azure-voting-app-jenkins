@@ -72,9 +72,9 @@ pipeline {
 
       stage('Run Trivy') {
          steps {
-            pwsh(script: """
+            bat '''
             C:\\Windows\\System32\\wsl.exe -- ls
-            """)
+            '''
          }
       }
 
