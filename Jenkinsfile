@@ -72,8 +72,8 @@ pipeline {
 
       stage('Run Trivy') {
          steps {
-            wsl
             bat '''
+            wsl
             cd
             trivy image waer/jenkins-course  
             exit
